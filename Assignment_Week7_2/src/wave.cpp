@@ -17,11 +17,14 @@ void wave::setup(){
     
     
     
-    ofColor color(100,0,200);
+    ofColor color= (255,42,64);
     ofColor black(0,0,0);
     
-    p1 = ofPoint(-20, 0);
-    p2 = ofPoint( 20, 0);
+    color.set(ofRandom(255), ofRandom(255), ofRandom(255));
+    
+    p1 = ofPoint(ofRandom(-20,0));
+    p2 = ofPoint(ofRandom(20, 0));
+    
     t = ofPoint(ofGetWidth()/3, ofGetHeight()/3, 0);
     
     ofSetVerticalSync(true);
@@ -54,9 +57,9 @@ void wave::update(){
 //    float y = ofMap(ofSignedNoise(time * 0.4), -1, 1, 0, ofGetHeight());
 //    float z = ofMap(ofSignedNoise(time * 0.6), -1, 1, -800, 800);
     
-    float x = ofSignedNoise(time * 0.6) * ofRandom(1, 20);
-    float y = ofSignedNoise(time * 0.6) * ofRandom(-1, 1.5);
-    float z = ofSignedNoise(time * 0.6) * ofRandom(1, 20);
+    float x = ofSignedNoise(time * 0.4) * ofRandom(1, 50);
+    float y = ofSignedNoise(time * 0.2) * ofRandom(1, 50);
+    float z = ofSignedNoise(time * 0.4) * ofRandom(1, 50);
 
 
      t += ofPoint(x, y, z);
@@ -79,10 +82,8 @@ void wave::draw(){
         ofRotateY(rY);
         ofRotateZ(rZ);
     
-    ofPushStyle();
-    ofSetColor(80, 200, 120);
     ofDrawLine(p1, p2);
-    ofPopStyle();
+
     ofPopMatrix();
     
     fbo.end();

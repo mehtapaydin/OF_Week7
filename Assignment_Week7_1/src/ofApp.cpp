@@ -79,7 +79,6 @@ void ofApp::draw(){
         ofRotateX(rX);
         ofRotateY(rY);
         ofRotateZ(rZ);
-    
         ofDrawLine(-20, 0, 20, 0);
     ofPopMatrix();
 

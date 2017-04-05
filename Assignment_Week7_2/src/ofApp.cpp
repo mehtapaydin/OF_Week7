@@ -31,7 +31,7 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
     
-        for(int i=0;i<5;i++){
+        for(int i=0; i<waves.size(); i++){
             waves[i].update();
             
             if(waves[i].t.x<0||waves[i].t.x>ofGetWidth()||waves[i].t.y<0||waves[i].t.y>ofGetHeight()){
@@ -49,9 +49,9 @@ void ofApp::update(){
 void ofApp::draw(){
     
     
-    for (int i=0; i<5; i++){
+    for (int i=0; i<waves.size(); i++){
         wave newWaves;
-//       newWaves.setup();
+        newWaves.setup();
          waves[i].draw();
     }
 
