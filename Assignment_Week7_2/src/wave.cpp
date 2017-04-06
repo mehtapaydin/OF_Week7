@@ -15,11 +15,6 @@ wave::wave(){
 
 void wave::setup(){
     
-    
-    
-    ofColor color= (255,42,64);
-    ofColor black(0,0,0);
-    
     color.set(ofRandom(255), ofRandom(255), ofRandom(255));
     
     p1 = ofPoint(ofRandom(-20,0));
@@ -31,12 +26,11 @@ void wave::setup(){
     
     fbo.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA32F); // higher precision alpha (no artifacts)
     
-    
     fbo.begin();
     ofClear(255,255,255, 0);
     fbo.end();
     
-    ofSetBackgroundColor(black);
+    ofSetBackgroundColor(0);
 
 }
 
@@ -57,9 +51,9 @@ void wave::update(){
 //    float y = ofMap(ofSignedNoise(time * 0.4), -1, 1, 0, ofGetHeight());
 //    float z = ofMap(ofSignedNoise(time * 0.6), -1, 1, -800, 800);
     
-    float x = ofSignedNoise(time * 0.4) * ofRandom(1, 50);
-    float y = ofSignedNoise(time * 0.2) * ofRandom(1, 50);
-    float z = ofSignedNoise(time * 0.4) * ofRandom(1, 50);
+    float x = ofSignedNoise(time * 0.8) * ofRandom(1, 50);
+    float y = ofSignedNoise(time * 0.1) * ofRandom(1, 50);
+    float z = ofSignedNoise(time * 0.5) * ofRandom(1, 50);
 
 
      t += ofPoint(x, y, z);
@@ -77,7 +71,6 @@ void wave::draw(){
 
     ofPushMatrix();
         ofTranslate(t);
-    
         ofRotateX(rX);
         ofRotateY(rY);
         ofRotateZ(rZ);

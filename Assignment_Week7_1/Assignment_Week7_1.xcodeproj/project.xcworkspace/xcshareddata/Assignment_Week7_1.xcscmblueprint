@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "93FF905CB00EA0F6B934AAB65491EC1AAE05E468",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "93FF905CB00EA0F6B934AAB65491EC1AAE05E468" : 9223372036854775807,
+    "C78D2697CA4F76D26B9DC516769E747252785DD2" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4ED617A5-124D-4C6F-905A-FC4116CA7E98",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "93FF905CB00EA0F6B934AAB65491EC1AAE05E468" : "Assignment_Week7\/",
+    "C78D2697CA4F76D26B9DC516769E747252785DD2" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Assignment_Week7_1",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Assignment_Week7_1\/Assignment_Week7_1.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mehtapaydin\/OF_Week7.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "93FF905CB00EA0F6B934AAB65491EC1AAE05E468"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mehtapaydin\/OF_Assignments.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C78D2697CA4F76D26B9DC516769E747252785DD2"
+    }
+  ]
+}
