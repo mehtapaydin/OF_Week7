@@ -9,16 +9,25 @@
 #include "wave.h"
 #include "ofMain.h"
 
+
+
 wave::wave(){
 
 }
 
 void wave::setup(){
     
+    n = ofRandom(0.1,2);
+    a = ofRandom(0.3,0.5);
+    b = ofRandom(0.4,0.6);
+    c = ofRandom(0.5,0.7);
+    
+    sWeight= ofRandom(1,1.5);
+    
     color.set(ofRandom(255), ofRandom(255), ofRandom(255));
     
-    p1 = ofPoint(ofRandom(-20,0));
-    p2 = ofPoint(ofRandom(20, 0));
+    p1 = ofPoint(-40,0);
+    p2 = ofPoint(40, 0);
     
     t = ofPoint(ofGetWidth()/3, ofGetHeight()/3, 0);
     
@@ -30,7 +39,7 @@ void wave::setup(){
     ofClear(255,255,255, 0);
     fbo.end();
     
-    ofSetBackgroundColor(0);
+  
 
 }
 
@@ -40,21 +49,22 @@ void wave::setup(){
 
 void wave::update(){
     
-    float time = ofGetElapsedTimef();
+    
+    time = ofGetElapsedTimef()*n;
 
   
     rX = ofSignedNoise(time * 0.5) * 180.0;  // rotate +- 400deg
     rY = ofSignedNoise(time * 0.3) * 180.0;
     rZ = ofSignedNoise(time * 0.9) * 180.0;
 
-//    float x = ofMap(ofSignedNoise(time * 0.2), -1, 1, 0, ofGetWidth());
-//    float y = ofMap(ofSignedNoise(time * 0.4), -1, 1, 0, ofGetHeight());
-//    float z = ofMap(ofSignedNoise(time * 0.6), -1, 1, -800, 800);
-    
-    float x = ofSignedNoise(time * 0.8) * ofRandom(1, 50);
-    float y = ofSignedNoise(time * 0.1) * ofRandom(1, 50);
-    float z = ofSignedNoise(time * 0.5) * ofRandom(1, 50);
 
+    float x = ofSignedNoise(time * a) * ofRandom(1, 50);
+    float y = ofSignedNoise(time * b) * ofRandom(1, 50);
+    float z = ofSignedNoise(time * c) * ofRandom(1, 50);
+
+    scaleX= (1-ofNoise(time*0.2)) * sWeight;
+    scaleY= (1-ofNoise(time*0.4)) * sWeight;
+    scaleZ= (1-ofNoise(time*0.3)) * sWeight;
 
      t += ofPoint(x, y, z);
     
@@ -65,12 +75,13 @@ void wave::update(){
 void wave::draw(){
     
     fbo.begin();
-    ofSetColor(0,0,0,1);
+    ofSetColor(255,255,255,10);
     ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
     ofSetColor(color);
-
+  
     ofPushMatrix();
         ofTranslate(t);
+        ofScale(scaleX,scaleY,scaleZ);
         ofRotateX(rX);
         ofRotateY(rY);
         ofRotateZ(rZ);

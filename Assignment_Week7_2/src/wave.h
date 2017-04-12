@@ -31,24 +31,27 @@ public:
     
 private:
     
-    float time = ofGetElapsedTimef();
-
+    float time;
+    float n;
     
     float sTime;	// start time
     float sWeight;      // scale weight
     float fallSpeed;	// how fast to fall
     float fallWiggle;   // back and forth
     
-    float dScale;
-    float dScaleX;	// delta scales
-    float dScaleY;
-    float dScaleZ;
+    float scale;
+    float scaleX;	// delta scales
+    float scaleY;
+    float scaleZ;
     float rX;		// rotate angles
     float rY;
     float rZ;
     float x;
     float y;
     float z;
+    float a;
+    float b;
+    float c;
     
 };
 

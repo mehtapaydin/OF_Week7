@@ -25,7 +25,7 @@ void ofApp::setup(){
         waves.push_back(newWaves);
         }
 
-    
+   ofSetBackgroundColor(255);
 }
 
 //--------------------------------------------------------------
